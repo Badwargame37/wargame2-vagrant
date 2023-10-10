@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  header {
+    background-color: #50b3a2;
+    color: white;
+    text-align: center;
+    padding: 1em;
+  }
+  main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  .enumerate-container, .camelotica-humor {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  textarea {
+    width: 100%;
+  }
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+  .camelotica-humor {
+    font-style: italic;
+    text-align: justify;
+  }
+  

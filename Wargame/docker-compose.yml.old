@@ -1,0 +1,100 @@
+version: '3'
+services:
+  level1:
+    build:
+      context: ./level1
+    container_name: level1
+    ports:
+      - "8081:80"
+    networks:
+      - wargame_network
+    restart: always
+    command: ["nginx", "-g", "daemon off;"]
+    environment:
+      - VIRTUAL_HOST=level1.wargame.esd
+    labels:
+      - "traefik.http.routers.level1.rule=Host(`level1.wargame.esd`)"
+      - "traefik.http.routers.level1.middlewares=auth"
+      - "traefik.http.middlewares.auth.basicauth.users=user1:password1"
+
+  level2:
+    build:
+      context: ./level2
+    container_name: level2
+    ports:
+      - "8082:80"
+    networks:
+      - wargame_network
+    restart: always
+    command: ["nginx", "-g", "daemon off;"]
+    environment:
+      - VIRTUAL_HOST=level2.wargame.esd
+    labels:
+      - "traefik.http.routers.level2.rule=Host(`level2.wargame.esd`)"
+      - "traefik.http.routers.level2.middlewares=auth"
+      - "traefik.http.middlewares.auth.basicauth.users=user2:password2"
+
+  # ... Repeat the same configuration for levels 3 to 8 ...
+
+  level6:
+    build:
+      context: ./level6
+    container_name: level6
+    ports:
+      - "5000:5000"
+    networks:
+      - wargame_network
+    depends_on:
+      - mongodb
+    environment:
+      - VIRTUAL_HOST=level6.wargame.esd
+      - MONGO_URI=mongodb://mongodb:27017/wargame
+    labels:
+      - "traefik.http.routers.level6.rule=Host(`level6.wargame.esd`)"
+      - "traefik.http.routers.level6.middlewares=auth"
+      - "traefik.http.middlewares.auth.basicauth.users=user6:password6"
+
+  level7:
+    build:
+      context: ./level7
+    container_name: level7
+    ports:
+      - "5001:5000"
+    networks:
+      - wargame_network
+    depends_on:
+      - mongodb
+    environment:
+      - VIRTUAL_HOST=level7.wargame.esd
+      - MONGO_URI=mongodb://mongodb:27017/wargame
+    labels:
+      - "traefik.http.routers.level7.rule=Host(`level7.wargame.esd`)"
+      - "traefik.http.routers.level7.middlewares=auth"
+      - "traefik.http.middlewares.auth.basicauth.users=user7:password7"
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - wargame_network
+    volumes:
+      - ./mongo-data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
+
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks:
+      - wargame_network
+    restart: always
+
+networks:
+  wargame_network:

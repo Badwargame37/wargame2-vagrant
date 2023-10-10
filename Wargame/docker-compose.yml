@@ -1,0 +1,94 @@
+version: '3.8'
+services:
+  reverseproxy:
+    build:
+      context: ./ReverseProxy
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - level0
+      - level1
+      - level2
+      - level3
+      - level4
+      - level5
+      - level6
+      - level7
+      - level8
+    restart: always 
+
+  level0:
+    build:
+      context: ./level0
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8080:8080"
+    restart: always 
+
+  level1:
+    build:
+      context: ./level1
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8081:8081"
+    restart: always 
+
+  level2:
+    build:
+      context: ./level2
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8082:8082"
+    restart: always 
+
+  level3:
+    build:
+      context: ./level3
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8083:8083"
+    restart: always 
+
+  level4:
+    build:
+      context: ./level4
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8084:8083"
+    restart: always 
+  level5:
+    build:
+      context: ./level5
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8085:80"
+    restart: always 
+
+  level6:
+    build:
+      context: ./level6
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8086:8086"
+    restart: always 
+
+
+  level7:
+    build:
+      context: ./level7
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8087:8087"
+    restart: always 
+
+
+  level8:
+    build:
+      context: ./level8
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:80:8088"
+    restart: always 
+  

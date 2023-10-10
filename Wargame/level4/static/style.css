@@ -1,0 +1,18 @@
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 100px;
+}
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+p {
+    font-size: 1.2em;
+}
+.highlight {
+    color: #f39c12;
+}
+<!-- username for the login  is admin password is in rockyou -->

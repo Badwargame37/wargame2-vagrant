@@ -1,0 +1,17 @@
+#!/bin/bash
+# rbash_custom - Restricted shell for SSH
+
+# Define allowed commands
+ALLOWED_COMMANDS="cat whoami id tar wget echo"
+
+# Get the requested command
+REQUESTED_COMMAND="$SSH_ORIGINAL_COMMAND"
+
+# Check if the requested command is in the allowed list
+if [[ $ALLOWED_COMMANDS =~ $REQUESTED_COMMAND ]]; then
+    # Execute the requested command
+    exec "$REQUESTED_COMMAND"
+else
+    echo "Permission denied for $REQUESTED_COMMAND"
+    exit 1
+fi

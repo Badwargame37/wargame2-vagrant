@@ -1,0 +1,24 @@
+nmap
+enumeration web
+
+in certificiat-> level0.wargame.esd
+change host 
+level0 admin admin -> Bruteforce:  level1 iloveyou
+level1 -> level 2 6412e7c0f378b9dc2022cb2b39ef6515 in css in clear
+Level2 -3 84ef3369284d76d2bbd58681acde20ae in js obfuscated password BSG4EVER
+leve3 -> Level4 6816b62ae5e43beea14db29950624b76 -> brute force post  admin tintin // hint of the user admin in the html
+level4 ->  fa073c1090940a6b33bfcc078c472328 git diff
+Level5 ->  05fb917b1661c17a77aa3df24da2b1d9 git log
+level 6 -> level7 LFI -> /opt/level6/level6 -> base64 -> zip -> password cracking mdp superman -> 12b3638553c1f4a535a047e7003d9ac4
+Level 7 IDOR 4896be9d0f9da6266f1d6b84401ee701
+level 8 XXE -> RCE ls to see that  Secret-Confidentiel-file.txt exist download or read
+Protocol: SSH 
+Username: Merl1n_Th3_W1z4rd
+Password: Excal1bur&St4rDust
+
+One host:
+rbash tar
+Priv esc -> cronjob
+
+flag in /root/flag.txt
+

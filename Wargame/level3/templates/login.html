@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Level 3: Frak or Be Frakked!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+<body>
+    <h1>Level 3: Cylon or Human?</h1>
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kjCqqogqCY0?si=XyhBwLvcJtaDy853" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <!-- try hey secret cylon, thoses idiots of humans like to use default logins like  admin-->
+    <form action="/check" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="Enter">
+    </form>
+</body>
+</html>

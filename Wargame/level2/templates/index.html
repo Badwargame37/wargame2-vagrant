@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Can You Survive Level 2?</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='level2.js') }}"></script>
+</head>
+<body onload="init()">
+
+    <h1>Level 2: Don't Be a Toaster!</h1>
+    <img src="https://michaelthorn111.files.wordpress.com/2014/11/evolution-of-a-cylon-battlestar-galactica-t-shirt-bsg-90ee8.jpg" alt="Evolution of a Cylon" width="400" height="300"></img>
+    <p>Enter the secret code to proceed:</p>
+    <input type="text" id="userInput">
+    <button onclick="checkFlag()">Submit</button>
+    <p id="result"></p>
+
+</body>
+</html>
