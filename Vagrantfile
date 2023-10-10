@@ -4,12 +4,13 @@ Vagrant.configure("2") do |config|
 
   # Set the IP address of the server
   config.vm.network "private_network", ip: "192.168.190.15"
-
+  config.vm.synced_folder "./Wargame", "/opt/wargame"
+ 
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "4096"
-    vb.cpus = "4"
+    vb.cpus = "6"
   end
-  config.vm.synced_folder "./Wargame", "/home/vagrant/ELK-Ansbile"
+
  
   # Script to provision the virtual machine
   config.vm.provision "shell", inline: <<-SHELL
@@ -21,8 +22,6 @@ Vagrant.configure("2") do |config|
     # Install Ansible
     sudo apt update
     sudo apt install -y software-properties-common
-    sudo apt-add-repository --yes --update ppa:ansible/ansible
-    sudo apt install -y ansible
     sudo apt-get install gnupg -y
     # Install Docker
     curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
@@ -35,7 +34,7 @@ Vagrant.configure("2") do |config|
     sudo chmod +x /usr/local/bin/docker-compose
 
 
-	git clone https://github.com/Badwargame37/VagrantTestChal2.git
+
 
 
     # Install GCC (GNU Compiler Collection)
@@ -47,9 +46,32 @@ Vagrant.configure("2") do |config|
     # Start Docker service
     sudo systemctl start docker
     sudo systemctl enable docker
+    sudo su
+    cd /opt
+    git clone https://github.com/Badwargame37/wargame2-vagrant.git
+    cd wargame2-vagrant/Wargame/SSH-Machine
+	sudo cp rbash /usr/local/bin/rbash_custom
+	sudo useradd -m -s /bin/bash Merl1n_Th3_W1z4rd
+	echo "Merl1n_Th3_W1z4rd:Excal1bur&St4rDust" | sudo chpasswd
 
-    # Optionally, you can set up a Kubernetes cluster using kubeadm here
+    #python3 install.py
+    #cat /home/vagrant/battlestar_email.txt
+    #cp /home/vagrant/battlestar_email.txt /opt/wargame2-vagrant/Wargame/level8/xxe/Secret-Confidentiel-file.txt
+    cd /opt/wargame2-vagrant/Wargame/
+    docker-compose build
+    docker-compose up -d
+	pids=$(sudo lsof -t -i :80)
+	# Check if there are any PIDs
+	if [ -n "$pids" ]; then
+		# Kill the processes using port 80
+		sudo kill -9 $pids
+		echo "Killed processes with port 80."
+	else
+		echo "No processes found using port 80."
+	fi
 
+  
+	docker-compose up -d
     echo "All installations completed."
   SHELL
 end
