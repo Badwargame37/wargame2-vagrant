@@ -3,6 +3,7 @@ FROM php:7.4-apache
 
 # Change the document root of Apache to /var/www/html/templates
 ENV APACHE_DOCUMENT_ROOT /var/www/html/templates
+RUN chown -R www-data:www-data /var/www/html
 
 # Update Apache configuration
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
