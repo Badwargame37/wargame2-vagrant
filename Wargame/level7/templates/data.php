@@ -4,6 +4,9 @@ header("Content-Type: application/json");
 $secrets = [
     2 => "Starbuck's Poker Cheat Codes",
     3 => "The Real Location of Earth (Not Kobol!)",
+    5 => "Hey OSS117 here is my password 4896be9d0f9da6266f1d6b84401ee701",
+    4 => "Hey starbuck look at this https://bit.ly/3BlS71b  from dr zee",
+    1 => "Adama secret love book",
 ];
 
 $userId = $_GET['id'] ?? null;
