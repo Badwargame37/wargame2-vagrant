@@ -12,7 +12,6 @@ RUN apt-get update && \
     docker-php-ext-install zip
 # Copy the current directory contents into the container
 COPY . /var/www/html/
-COPY  ./git /var/www/html/templates/.git
 # Expose port 80
 EXPOSE 80
 
