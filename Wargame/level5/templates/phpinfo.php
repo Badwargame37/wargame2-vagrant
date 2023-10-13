@@ -59,7 +59,7 @@
     ?>
     
     <div class="instruction">
-      <h2>How to use: index.php?path=/var/</h2>
+      <h2>How to use: phpinfo.php?path=/var/</h2>
     </div>
 
     <div class="file-list">
