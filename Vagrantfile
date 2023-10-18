@@ -72,6 +72,17 @@ Vagrant.configure("2") do |config|
 
   
 	docker-compose up -d
+	############################reboot chec service #########
+	chmod +x /opt/wargame2-vagrant/Wargame/script.sh
+	cp /opt/wargame2-vagrant/Wargame/wargame.service /etc/systemd/system/wargame.service
+	sed -i 's/\r$//' /opt/wargame2-vagrant/Wargame/script.sh
+	bash ${HOME}/docker-stack/wordpress/script.sh
+	
+	sudo systemctl daemon-reload
+	
+	sudo systemctl enable wargame.service
+	sudo systemctl start wargame.service
+
     echo "All installations completed."
   SHELL
 end
