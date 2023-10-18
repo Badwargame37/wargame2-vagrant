@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 User=root
-ExecStart=/root/docker-stack/wargame-mexico/Service/script.sh
+ExecStart=/opt/wargame2-vagrant/Wargame/script.sh
 
 [Install]
 WantedBy=multi-user.target
