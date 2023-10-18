@@ -1,0 +1,10 @@
+[Unit]
+Description=Your Service Description
+After=network.target
+
+[Service]
+User=root
+ExecStart=/root/docker-stack/wargame-mexico/Service/script.sh
+
+[Install]
+WantedBy=multi-user.target
