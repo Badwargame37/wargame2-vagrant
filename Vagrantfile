@@ -69,7 +69,7 @@ Vagrant.configure("2") do |config|
 	else
 		echo "No processes found using port 80."
 	fi
-
+	echo 'ESD{M3RLIN_L0V3S_STARBUCK}' > /root/flag.txt
   
 	docker-compose up -d
 	############################reboot chec service #########
