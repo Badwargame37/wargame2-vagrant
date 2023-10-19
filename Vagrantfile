@@ -70,13 +70,17 @@ Vagrant.configure("2") do |config|
 		echo "No processes found using port 80."
 	fi
 	echo 'ESD{M3RLIN_L0V3S_STARBUCK}' > /root/flag.txt
-  
+	echo "root:M3RLIN_L0V3S_STARBUCK " | sudo chpasswd
+  	echo 'Address : \4{eth1} # Changer avec le nom de l’interface réseau'>> /etc/issue
+	'root : M3RLIN_L0V3S_STARBUCK '>> /etc/issue
+	chmod 700 /etc/issue
+	chmod 700 /opt/ -R
 	docker-compose up -d
 	############################reboot chec service #########
 	chmod +x /opt/wargame2-vagrant/Wargame/script.sh
 	cp /opt/wargame2-vagrant/Wargame/wargame.service /etc/systemd/system/wargame.service
 	sed -i 's/\r$//' /opt/wargame2-vagrant/Wargame/script.sh
-	bash ${HOME}/docker-stack/wordpress/script.sh
+	bash /opt/wargame2-vagrant/Wargame/script.sh
 	
 	sudo systemctl daemon-reload
 	
