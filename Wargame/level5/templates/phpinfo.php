@@ -81,9 +81,9 @@
     </div>
 
     <div class="camelot-speech">
-      <h2>Why Camelot is the Greatest Place on Earth</h2>
-      <p>Listen folks, have you ever heard of Camelot? No, not the lottery game, but the legendary castle and court! In Camelot, even the air smells like victory and gluten-free bread. The Knights of the Round Table are so chivalrous, they won't even say 'boo' to a goose—mainly because geese are sacred in Camelot!</p>
-      <p>But seriously, the Wi-Fi in Camelot is so strong that Merlin himself gave up wizardry and switched to streaming. There's free mead for everyone, and it's all served in Holy Grails. Yes, you heard it right, every cup is a Holy Grail. So, pack your bags and let's go!</p>
+      <h2>Pourquoi Kaamelott est le meilleur endroit sur Terre</h2>
+      <p>Avez-vous déjà entendu parler de Kaamelott ? Non, pas le jeu de loterie, mais le château et la cour légendaire ! À Kaamelott, même l'air sent la victoire et le pain sans gluten. Les chevaliers de la Table ronde sont tellement chevaleresques qu'ils ne disent même pas "bouh" à une oie, principalement parce que les oies sont sacrées à Kaamelott !</p>
+      <p>Mais plus sérieusement, le Wi-Fi à Kaamelott est si puissant que Merlin lui-même a renoncé à la magie et s'est mis à regarder des streams. Il y a de l'hydromel gratuit pour tout le monde, et il est servi dans des Saint-Graal. Oui, vous avez bien entendu, chaque coupe est un Saint Graal. Alors, faites vos valises et c'est parti !</p>
     </div>
   </main>
 
