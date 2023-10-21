@@ -51,7 +51,7 @@ Vagrant.configure("2") do |config|
     git clone https://github.com/Badwargame37/wargame2-vagrant.git
     cd wargame2-vagrant/Wargame/SSH-Machine
 	sudo cp rbash /usr/local/bin/rbash_custom
-	sudo useradd -m -s /bin/bash Merl1n_Th3_W1z4rd
+	sudo useradd -m -s /bin/rbash_custom Merl1n_Th3_W1z4rd
 	echo "Merl1n_Th3_W1z4rd:Excal1bur&St4rDust" | sudo chpasswd
 
     #python3 install.py
